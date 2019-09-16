@@ -1,11 +1,12 @@
-let api = require('./Controlador_Usuarios');
+let usuario = require('./Controlador_Usuarios');
 
-const usuario1 = new api.Usuario("Andres","Medina", 54613245);
-const usuario2 = new api.Usuario("Cosme", "landes", 51321515);
-const usuario3 = new api.Usuario("Fulanito", "riaño", 54545454);
+const usuario1 = new usuario("Andres","Medina", 54613245);
+const usuario2 = new usuario("Cosme", "landes", 51321515);
+const usuario3 = new usuario("Fulanito", "riaño", 54545454);
 
-api.metodosUsuario.agregarUsuario(usuario1);
+usuario1.agregarUsuario();
+usuario2.agregarUsuario();
+usuario3.agregarUsuario();
+var usuarios = usuario1.consultarUsuarios();
 
-console.log(usuario1.nombre);
-console.log(usuario2.nombre);
-console.log(usuario3.nombre);
+console.log(usuarios);

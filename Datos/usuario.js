@@ -1,11 +1,9 @@
-//Definir el prototipo de usuario
-const Usuario = function(nombre, apellido, telefono){
-    this.nombre= nombre;
-    this.apellido= apellido;
-    this.telefono= telefono;
-}
+//users array
+var Usuarios = [];
 
-
-module.exports = 
-    Usuario
+//*** IMPORTANTE ***/
+// Existen dos tipos diferentes de exportación , nombrada y por defecto. 
+// Se pueden tener varias exportaciones nombradas por módulo 
+// pero sólo una exportación por defecto.
+module.exports = Usuarios;
 

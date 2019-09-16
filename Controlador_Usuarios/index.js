@@ -1,44 +1,23 @@
-// primera forma:
+var usuarios = require('./../Datos/usuario.js');
 
-// const usuario= require('./usuario.js')
-
-// const Usuario= usuario.Usuario
-
-// module.exports = {
-//     Usuario
-    
-// }
-
-//Segunda forma:
-
-const Usuario= require('../Datos/usuario.js');
-
-const fs=require('fs');
-
-
-
-
-var metodosUsuario= {
-
-    agregarUsuario(Usuario){
-
-        var content=fs.readFileSync('./../Datos/listaUsuarios.json');
-        console.log(content);
-       
-        var json=JSON.stringify(Usuario);
-        
-        fs.writeFile('./../Datos/listaUsuarios.json',json,'utf8',callback);
-    
-    },
-
-    consultarUarios(){
-        return listaUsuarios;
-    }
+var Usuario = function(nombre, apellido, telefono){
+    this.nombre= nombre;
+    this.apellido= apellido;
+    this.telefono= telefono;	
 }
 
+// class methods
+Usuario.prototype.agregarUsuario = function() {
+  usuarios.push(this);
+};
 
+Usuario.prototype.consultarUsuarios = function() {
+  return usuarios;
+};
 
-module.exports = {
-    Usuario, metodosUsuario    
-}
+//*** IMPORTANTE ***/
+// Existen dos tipos diferentes de exportación , nombrada y por defecto. 
+// Se pueden tener varias exportaciones nombradas por módulo 
+// pero sólo una exportación por defecto.
 
+module.exports = Usuario;
